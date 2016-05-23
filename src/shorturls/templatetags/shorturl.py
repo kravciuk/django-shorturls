@@ -1,4 +1,5 @@
-import urlparse
+# import urlparse
+from urllib.parse import urlparse
 from django import template
 from django.conf import settings
 from django.core import urlresolvers
