@@ -1,9 +1,10 @@
 from django.conf import settings
-from django.conf.urls import *
+from django.conf.urls import url
+from .views import redirect
 
-urlpatterns = patterns('', 
+urlpatterns = [
     url(
-        regex = '^(?P<prefix>%s)(?P<tiny>\w+)$' % '|'.join(settings.SHORTEN_MODELS.keys()),
-        view  = 'shorturls.views.redirect',
-    ),
-)
+        regex='^(?P<prefix>%s)(?P<tiny>\w+)$' % '|'.join(settings.SHORTEN_MODELS.keys()),
+        view=redirect,
+    )
+]
